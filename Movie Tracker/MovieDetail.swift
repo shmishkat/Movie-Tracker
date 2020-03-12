@@ -32,8 +32,9 @@ struct MovieDetail: View {
                 sectionTitle(title: "Rating")
                 
                 VStack {
-                    Text(String(repeating: "⭐️", count: Int(movie.rating)))
-                    Slider(value: $movie.rating, in: 1...5, step: 1)
+                    Text(String(repeating: "⭐️", count: Int(movie.rating))).accessibility(label: Text("\(Int(movie.rating)) star rating"))
+                    Slider(value: $movie.rating, in: 1...5, step: 1).accessibility(label: Text("\(Int(movie.rating))"))
+                    
                 }
             }
             Section{
